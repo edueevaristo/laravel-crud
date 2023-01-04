@@ -15,11 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/alunos');
 });
 
-Route::get('/alunos', [AlunosController::class, 'index']);
-Route::get('/alunos/criar', [AlunosController::class, 'create']);
-Route::post('/alunos/salvar', [AlunosController::class, 'store']);
-Route::get('/alunos/editar/', [AlunosController::class, 'update']);
-Route::post('/alunos/excluir', [AlunosController::class, 'delete']);
+
+Route::resource('/alunos', AlunosController::class);
+
+// Route::get('/alunos', [AlunosController::class, 'index']);
+// Route::get('/alunos/criar', [AlunosController::class, 'create']);
+// Route::post('/alunos/salvar', [AlunosController::class, 'store']);
+// Route::get('/alunos/editar/', [AlunosController::class, 'update']);
+// Route::post('/alunos/excluir', [AlunosController::class, 'delete']);
+
+

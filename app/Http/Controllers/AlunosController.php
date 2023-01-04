@@ -39,12 +39,9 @@ class AlunosController extends Controller
 
         $aluno->save();
 
-        return redirect('/alunos');
+        return to_route('alunos.index');
 
-        //Media de notas
-        //Matrícula, transferência, rematrícula (feito)
-        //Se for transferência, abrir input de escola anterior (feito)
-        //SE rematricula, insere codigo para trazer os dados (em andamento, botao feito, falta trazer os dados do aluno);
+        //Realizar a media de notas
         //Rematricula, criar campo no banco com o id do aluno (o mesmo vai conter o id da tabela mais o nome em maiusculo concatenado mais o ano atual);
     }
 

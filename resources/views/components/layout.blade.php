@@ -105,10 +105,10 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/alunos">Geral</a>
+                            <a class="nav-link active" aria-current="page" href="{{ route('alunos.index') }}">Geral</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/alunos/criar">Incluir Aluno</a>
+                            <a class="nav-link" href="{{ route('alunos.create') }}">Incluir Aluno</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled">Notas</a>

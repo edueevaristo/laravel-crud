@@ -1,6 +1,6 @@
 <x-layout title="Novo Aluno">
     <div class="container mt-5">
-        <form action="/alunos/salvar" method="post">
+        <form action="{{ route('alunos.store') }}" method="post">
             @csrf
             <h3 class="">Novo Aluno - Sistema Escolar Regional</h3>
             <hr class="divisor">
