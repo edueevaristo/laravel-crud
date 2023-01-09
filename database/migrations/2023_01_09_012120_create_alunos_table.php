@@ -16,11 +16,13 @@ return new class extends Migration
         Schema::create('alunos', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 128);
-            $table->string('sala', 128);
+            $table->integer('idade');
+            $table->string('tipocadastro', 128);
+            $table->string('turma', 128);
             $table->string('ano', 128);
             $table->string('responsavel', 128);
-            $table->integer('idade');
-            $table->integer('qtde_reprovas');
+            $table->integer('qtdereprovas');
+            $table->string('escolaanterior');
             $table->date('data_cadastro');
             $table->timestamps();
         });

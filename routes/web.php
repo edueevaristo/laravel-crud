@@ -19,7 +19,8 @@ Route::get('/', function () {
 });
 
 
-Route::resource('/alunos', AlunosController::class);
+Route::resource('/alunos', AlunosController::class)
+    ->only(['index', 'create', 'store', 'edit', 'destroy', 'update']);
 
 // Route::get('/alunos', [AlunosController::class, 'index']);
 // Route::get('/alunos/criar', [AlunosController::class, 'create']);

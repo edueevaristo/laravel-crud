@@ -1,6 +1,11 @@
 <x-layout title="Alunos">
     <div class="container mt-5">
         <h3 class="">Central de Alunos - Sistema Escolar Regional</h3>
+        @isset($mensagem)
+            <div class="alert alert-success">
+                {{ $mensagem }}
+            </div>
+        @endisset
         <hr class="divisor">
         </hr>
         <table class="table mt-4">
@@ -27,11 +32,18 @@
                         <td>{{ $aluno->ano }}</td>
                         <td>{{ $aluno->responsavel }}</td>
                         <td>{{ $aluno->idade }}</td>
-                        <td>{{ $aluno->qtde_reprovas }}</td>
+                        <td>{{ $aluno->qtdereprovas }}</td>
                         <td>{{ $aluno->data_cadastro }}</td>
                         <td>
-                            <a href="/alunos"><i class="fa-solid fa-pen p-2"></i></a>
-                            <a href="/alunos"><i class="fa-solid fa-trash"></i></a>
+                            {{-- <span class="d-flex">
+                                <a href=" {{ route('alunos.edit', $aluno->id) }}"
+                                    class="btn btn-primary btn-sm">Editar</a>
+                                <form action="{{ route('alunos.destroy', $aluno->id) }}" method="post" class="ms-2">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-sm">X</button>
+                                </form>
+                            </span> --}}
                         </td>
                     </tr>
                 @endforeach
