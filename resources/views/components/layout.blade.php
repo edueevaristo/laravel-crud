@@ -123,6 +123,15 @@
     <main class="flex-shrink-0">
         <div class="container">
             <br>
+            @if ($errors->any())
+                <div class="alert alert-danger m-5 p-4">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             {{ $slot }}
         </div>
     </main>

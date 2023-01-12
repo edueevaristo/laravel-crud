@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AlunosFormRequest;
 use App\Models\Alunos;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,7 @@ class AlunosController extends Controller
         return view('alunos.create');
     }
 
-    public function store(Request $request)
+    public function store(AlunosFormRequest $request)
     {
 
         $nome = $request->input('nome');
@@ -60,7 +61,7 @@ class AlunosController extends Controller
         return view('alunos.edit')->with('aluno', $aluno);
     }
 
-    public function update(Alunos $alunos, Request $request)
+    public function update(Alunos $alunos, AlunosFormRequest $request)
     {
         $alunos->fill($request->all());
         $alunos->save();

@@ -1,10 +1,10 @@
 <form action="{{ $action }}" method="post">
     @csrf
-    @isset($nome)
+    @if ($update)
         @method('PUT')
-    @endisset
+    @endif
 
-    <div class="container mt-5">
+    <div class="container mt-3 p-5">
         @csrf
         <h3 class="">Sistema Escolar Regional</h3>
         <hr class="divisor">

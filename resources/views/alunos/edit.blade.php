@@ -7,6 +7,7 @@
         :ano="$aluno->ano"
         :responsavel="$aluno->responsavel"
         :reprovas="$aluno->qtdereprovas"
-        :escolaanterior="$aluno->escolaanterior">
+        :escolaanterior="$aluno->escolaanterior"
+        :update="true">
     </x-alunos.form>
 </x-layout>
