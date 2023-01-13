@@ -40,7 +40,7 @@ class AlunosController extends Controller
         $aluno->ano = $ano;
         $aluno->tipocadastro = $tipocadastro;
         $aluno->turma = $turma;
-        $aluno->qtdereprovas = $reprova;
+        $aluno->qtdereprovas = ($tipocadastro == 0 ? 0 : $reprova);
         $aluno->responsavel = $responsavel;
         $aluno->data_cadastro = date('d-m-Y H:i:s');
         $aluno->escolaanterior = (empty($escolaanterior) ? "N/A" : $escolaanterior);

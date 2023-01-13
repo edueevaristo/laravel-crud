@@ -18,14 +18,14 @@ Route::get('/', function () {
     return redirect('/alunos');
 });
 
+Route::controller(AlunosController::class)->group(function() {
 
-Route::resource('/alunos', AlunosController::class)
-    ->only(['index', 'create', 'store', 'edit', 'destroy', 'update']);
+    Route::get('/alunos', 'index')->name('alunos.index');
+    Route::get('/alunos/criar', 'create')->name('alunos.create');
+    Route::post('/alunos/salvar', 'store')->name('alunos.store');
+    Route::get('/alunos/editar/{id}', 'edit');
+    Route::post('/alunos/excluir/{id}', 'destroy');
+    Route::post('/alunos/update/{id}', 'update');
 
-// Route::get('/alunos', [AlunosController::class, 'index']);
-// Route::get('/alunos/criar', [AlunosController::class, 'create']);
-// Route::post('/alunos/salvar', [AlunosController::class, 'store']);
-// Route::get('/alunos/editar/', [AlunosController::class, 'update']);
-// Route::post('/alunos/excluir', [AlunosController::class, 'delete']);
-
+});
 
