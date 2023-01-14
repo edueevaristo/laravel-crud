@@ -23,9 +23,9 @@ Route::controller(AlunosController::class)->group(function() {
     Route::get('/alunos', 'index')->name('alunos.index');
     Route::get('/alunos/criar', 'create')->name('alunos.create');
     Route::post('/alunos/salvar', 'store')->name('alunos.store');
-    Route::get('/alunos/editar/{id}', 'edit');
-    Route::post('/alunos/excluir/{id}', 'destroy');
-    Route::post('/alunos/update/{id}', 'update');
+    Route::get('/alunos/editar/{alunos}', 'edit')->name('alunos.edit');
+    Route::delete('/alunos/excluir/{alunos}', 'destroy')->name('alunos.destroy');
+    Route::post('/alunos/update/{alunos}', 'update')->name('alunos.update');
 
 });
 
