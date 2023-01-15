@@ -56,9 +56,9 @@ class AlunosController extends Controller
         return to_route('alunos.index')->with('mensagem.sucesso', "Aluno '{$alunos->nome}' removido com sucesso.");
     }
 
-    public function edit(Alunos $aluno)
+    public function edit(Alunos $alunos)
     {
-        return view('alunos.edit')->with('aluno', $aluno);
+        return view('alunos.edit')->with('alunos', $alunos);
     }
 
     public function update(Alunos $alunos, AlunosFormRequest $request)

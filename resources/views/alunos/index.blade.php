@@ -37,7 +37,7 @@
                         <td>
                             <span class="d-flex">
                                 <a href=" {{ route('alunos.edit', $aluno->id) }}"
-                                    class="btn btn-primary btn-sm disabled">Editar</a>
+                                    class="btn btn-primary btn-sm">Editar</a>
                                 <form action="{{ route('alunos.destroy', $aluno->id) }}" method="post" class="ms-2">
                                     @csrf
                                     @method('DELETE')
