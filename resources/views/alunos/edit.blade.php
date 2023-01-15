@@ -1,11 +1,11 @@
-<x-layout title="Editar Aluno '{{ $alunos->nome }}'">
+<x-layout title="Edição de Alunos">
     <form action="{{ route('alunos.update', $alunos->id) }}" method="post">
         @csrf
         @method('PUT')
 
         <div class="container mt-3 p-5">
             @csrf
-            <h3 class="">Sistema Escolar Regional</h3>
+            <h3 class="">Editar Aluno '{{ $alunos->nome }}'</h3>
             <hr class="divisor">
             <div class="row g-3 mt-2">
                 <div class="col-lg-6 nome">
