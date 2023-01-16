@@ -20,9 +20,9 @@
 
                 <div class="col-lg-2">
                     <label for="ano" class="form-label">Ano</label>
-                    <select class="form-select" id="ano" name="ano" value="{{ $alunos->ano }}">
+                    <select class="form-select" id="ano" name="ano">
                         <option value="">Selecione o ano...</option>
-                        <option value="1º Ano">1º Ano</option>
+                        <option value="1°Ano">1º Ano</option>
                         <option value="2º Ano">2º Ano</option>
                         <option value="3º Ano">3º Ano</option>
                         <option value="4º Ano">4º Ano</option>

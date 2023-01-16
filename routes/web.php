@@ -25,7 +25,7 @@ Route::controller(AlunosController::class)->group(function() {
     Route::post('/alunos/salvar', 'store')->name('alunos.store');
     Route::get('/alunos/editar/{alunos}', 'edit')->name('alunos.edit');
     Route::delete('/alunos/excluir/{alunos}', 'destroy')->name('alunos.destroy');
-    Route::post('/alunos/update/{alunos}', 'update')->name('alunos.update');
+    Route::put('/alunos/update/{alunos}', 'update')->name('alunos.update');
 
 });
 
