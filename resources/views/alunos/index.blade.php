@@ -7,7 +7,6 @@
             </div>
         @endisset
         <hr class="divisor">
-        </hr>
         <table class="table mt-4">
             <thead>
                 <tr>
@@ -28,7 +27,7 @@
                     <tr>
                         <td>{{ $aluno->id }}</td>
                         <td>{{ $aluno->nome }}</td>
-                        <td>{{ $aluno->sala }}</td>
+                        <td>{{ $aluno->turma }}</td>
                         <td>{{ $aluno->ano }}</td>
                         <td>{{ $aluno->responsavel }}</td>
                         <td>{{ $aluno->idade }}</td>

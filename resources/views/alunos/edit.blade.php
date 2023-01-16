@@ -21,29 +21,36 @@
                 <div class="col-lg-2">
                     <label for="ano" class="form-label">Ano</label>
                     <select class="form-select" id="ano" name="ano">
-                        <option value="">Selecione o ano...</option>
-                        <option value="1°Ano">1º Ano</option>
-                        <option value="2º Ano">2º Ano</option>
-                        <option value="3º Ano">3º Ano</option>
-                        <option value="4º Ano">4º Ano</option>
-                        <option value="5º Ano">5º Ano</option>
-                        <option value="6º Ano">6º Ano</option>
-                        <option value="7º Ano">7º Ano</option>
-                        <option value="8º Ano">8º Ano</option>
-                        <option value="9º Ano">9º Ano</option>
-                        <option value="1º Colegial">1º Colegial</option>
-                        <option value="2º Colegial">2º Colegial</option>
-                        <option value="3º Colegial">3º Colegial</option>
+                        @if ($alunos->ano)
+                            <option value="{{ $alunos->ano }}" selected>{{ $alunos->ano }}</option>
+                        @else
+                            <option value="">Selecione o ano...</option>
+                            <option value="1°Ano">1º Ano</option>
+                            <option value="2º Ano">2º Ano</option>
+                            <option value="3º Ano">3º Ano</option>
+                            <option value="4º Ano">4º Ano</option>
+                            <option value="5º Ano">5º Ano</option>
+                            <option value="6º Ano">6º Ano</option>
+                            <option value="7º Ano">7º Ano</option>
+                            <option value="8º Ano">8º Ano</option>
+                            <option value="9º Ano">9º Ano</option>
+                            <option value="1º Colegial">1º Colegial</option>
+                            <option value="2º Colegial">2º Colegial</option>
+                            <option value="3º Colegial">3º Colegial</option>
+                        @endif
                     </select>
                 </div>
                 <div class="col-lg-2">
                     <label for="tipocadastro" class="form-label">Tipo</label>
-                    <select class="form-select" id="tipocadastro" name="tipocadastro"
-                        value="{{ $alunos->tipocadastro }}">
-                        <option value="-1">Selecione qual forma de cadastro..</option>
-                        <option value="0">Matrícula</option>
-                        <option value="1">Transferência</option>
-                        <option value="2">Rematrícula</option>
+                    <select class="form-select" id="tipocadastro" name="tipocadastro">
+                        @if ($alunos->tipocadastro)
+                            <option value="{{ $alunos->tipocadastro }}" selected></option>
+                        @else
+                            <option value="-1">Selecione qual forma de cadastro..</option>
+                            <option value="0">Matrícula</option>
+                            <option value="1">Transferência</option>
+                            <option value="2">Rematrícula</option>
+                        @endif
                     </select>
                 </div>
                 <div class="col-lg-2 mt-5 id-aluno d-none">
@@ -68,12 +75,16 @@
                 </div>
                 <div class="col-lg-2 reprovas-1 d-none">
                     <label for="reprovas" class="form-label">Qtde Reprovas</label>
-                    <select class="form-select" id="reprovas" name="reprovas" value="{{ $alunos->tipocadastro }}">
+                    <select class="form-select" id="reprovas" name="reprovas">
+                        @if ($alunos->qtdereprovas)
+                            <option value="{{ $alunos->qtdereprovas }}" selected></option>
+                        @else
                         <option value="-1">Selecione a quantidade de reprovas...</option>
                         <option value="0">0 reprova</option>
                         <option value="1">1 reprova</option>
                         <option value="2">2 reprovas</option>
                         <option value="3">3 reprovas</option>
+                        @endif
                     </select>
                 </div>
             </div>
