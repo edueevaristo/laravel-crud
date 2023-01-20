@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('turma', 128);
             $table->string('ano', 128);
             $table->string('responsavel', 128);
-            $table->integer('qtdereprovas');
+            $table->string('qtdereprovas', 128);
             $table->string('escolaanterior');
             $table->date('data_cadastro');
             $table->timestamps();

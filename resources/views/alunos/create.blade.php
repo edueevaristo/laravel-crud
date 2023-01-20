@@ -40,9 +40,9 @@
                     <label for="tipocadastro" class="form-label">Tipo</label>
                     <select class="form-select" id="tipocadastro" name="tipocadastro">
                         <option value="-1">Selecione qual forma de cadastro..</option>
-                        <option value="0">Matrícula</option>
-                        <option value="1">Transferência</option>
-                        <option value="2">Rematrícula</option>
+                        <option value="Matrícula">Matrícula</option>
+                        <option value="Transferência">Transferência</option>
+                        <option value="Rematrícula">Rematrícula</option>
                     </select>
                 </div>
                 <div class="col-lg-2 mt-5 id-aluno d-none">
@@ -67,10 +67,10 @@
                     <label for="reprovas" class="form-label">Qtde Reprovas</label>
                     <select class="form-select" id="reprovas" name="reprovas">
                         <option value="">Selecione a quantidade de reprovas...</option>
-                        <option value="0">0 reprova</option>
-                        <option value="1">1 reprova</option>
-                        <option value="2">2 reprovas</option>
-                        <option value="3">3 reprovas</option>
+                        <option value="0 reprova">0 reprova</option>
+                        <option value="1 reprovas">1 reprova</option>
+                        <option value="2 reprovas">2 reprovas</option>
+                        <option value="3 reprovas">3 reprovas</option>
                     </select>
                 </div>
             </div>
@@ -91,7 +91,7 @@
 
                 var selecionado = $('#tipocadastro').val();
 
-                if (selecionado == 1 || selecionado == 2) {
+                if (selecionado == 'Transferência' || selecionado == 'Rematrícula') {
 
                     $('.reprovas-1').removeClass('d-none');
                     $('.responsavel').removeClass('col-lg-10');
@@ -105,14 +105,14 @@
 
                 }
 
-                if (selecionado == 1) {
+                if (selecionado == 'Transferência') {
                     $('.escola-ant').removeClass('d-none');
 
                 } else {
                     $('.escola-ant').addClass('d-none');
                 }
 
-                if (selecionado == 2) {
+                if (selecionado == 'Rematrícula') {
 
                     $('.id-aluno').removeClass('d-none');
                     $('.nome').removeClass('col-lg-6');

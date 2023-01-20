@@ -30,9 +30,16 @@ class AlunosController extends Controller
         $ano = $request->input('ano');
         $tipocadastro = $request->input('tipocadastro');
         $turma = $request->input('turma');
-        $reprova = (int) $request->input('reprovas');
+        $reprova = $request->input('reprovas');
         $responsavel = $request->input('responsavel');
         $escolaanterior = $request->input('escolaanterior');
+
+        if(empty($reprova) && empty($escolaanterior) && $tipocadastro == 'Matrícula') {
+
+            $escolaanterior = 'N/A';
+            $reprova = '0 reprova';
+
+        }
 
         $aluno = new Alunos();
         $aluno->nome = $nome;
@@ -40,10 +47,10 @@ class AlunosController extends Controller
         $aluno->ano = $ano;
         $aluno->tipocadastro = $tipocadastro;
         $aluno->turma = $turma;
-        $aluno->qtdereprovas = ($tipocadastro == 0 ? 0 : $reprova);
+        $aluno->qtdereprovas = $reprova;
         $aluno->responsavel = $responsavel;
         $aluno->data_cadastro = date('d-m-Y H:i:s');
-        $aluno->escolaanterior = (empty($escolaanterior) ? "N/A" : $escolaanterior);
+        $aluno->escolaanterior = $escolaanterior;
         $aluno->save();
 
         return to_route('alunos.index')->with('mensagem.sucesso', "Aluno '{$aluno->nome}' adicionado com sucesso.");;
