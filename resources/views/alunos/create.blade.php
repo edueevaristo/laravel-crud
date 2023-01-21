@@ -39,7 +39,7 @@
                 <div class="col-lg-2">
                     <label for="tipocadastro" class="form-label">Tipo</label>
                     <select class="form-select" id="tipocadastro" name="tipocadastro">
-                        <option value="-1">Selecione qual forma de cadastro..</option>
+                        <option value="">Selecione qual forma de cadastro..</option>
                         <option value="Matrícula">Matrícula</option>
                         <option value="Transferência">Transferência</option>
                         <option value="Rematrícula">Rematrícula</option>

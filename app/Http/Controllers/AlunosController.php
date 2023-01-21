@@ -24,22 +24,23 @@ class AlunosController extends Controller
 
     public function store(AlunosFormRequest $request)
     {
+        if(empty($request->input('reprovas')) && empty($request->input('escolaanterior')) && $request->input('tipocadastro') == 'Matrícula') {
+
+            $escola = 'N/A';
+            $reprovas = '0 reprova';
+
+        }
 
         $nome = $request->input('nome');
         $idade = (int) $request->input('idade');
         $ano = $request->input('ano');
+        $reprova = $reprovas;
         $tipocadastro = $request->input('tipocadastro');
         $turma = $request->input('turma');
-        $reprova = $request->input('reprovas');
         $responsavel = $request->input('responsavel');
-        $escolaanterior = $request->input('escolaanterior');
+        $escolaanterior = $escola;
 
-        if(empty($reprova) && empty($escolaanterior) && $tipocadastro == 'Matrícula') {
 
-            $escolaanterior = 'N/A';
-            $reprova = '0 reprova';
-
-        }
 
         $aluno = new Alunos();
         $aluno->nome = $nome;
